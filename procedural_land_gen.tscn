@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmm8i66wbp5f5"]
+
+[ext_resource type="Script" uid="uid://ctf4ixnieul2f" path="res://procedural_land_gen.gd" id="1_gvafg"]
+
+[node name="procedural_land_gen" type="StaticBody3D"]
+script = ExtResource("1_gvafg")
+world_size = 2
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 6.12323e-17, 1, 0, -1, 6.12323e-17, 0, 1000, 0)
+h_offset = 0.645
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.556838, 0.573619, -0.600744, 0.586331, 0.240838, 0.773442, 0.588343, -0.782916, -0.202223, 0, 82.5576, 0)

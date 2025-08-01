@@ -1,0 +1,28 @@
+[gd_resource type="ShaderMaterial" load_steps=7 format=3 uid="uid://blg3f3qxgs66r"]
+
+[ext_resource type="Shader" uid="uid://c628ifjpx2dmo" path="res://procedural_land.gdshader" id="1_s5ubg"]
+[ext_resource type="FastNoiseLite" uid="uid://cyju44yth00et" path="res://procedural_land_noise.tres" id="2_1cov4"]
+
+[sub_resource type="Gradient" id="Gradient_vygf3"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nj0g3"]
+seamless = true
+color_ramp = SubResource("Gradient_vygf3")
+noise = ExtResource("2_1cov4")
+
+[sub_resource type="Gradient" id="Gradient_s8rnq"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tenwo"]
+in_3d_space = true
+seamless = true
+as_normal_map = true
+bump_strength = 32.0
+color_ramp = SubResource("Gradient_s8rnq")
+noise = ExtResource("2_1cov4")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_s5ubg")
+shader_parameter/height = 64.0
+shader_parameter/color_gradient = SubResource("NoiseTexture2D_nj0g3")
+shader_parameter/normal_map = SubResource("NoiseTexture2D_tenwo")
